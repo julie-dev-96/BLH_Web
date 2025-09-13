@@ -1,0 +1,41 @@
+name: Deploy static site to Pages
+
+on:
+  push:
+    branches: [ main ]   # trigger when main branch is updated
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: self-hosted   # IMPORTANT: your org requires self-hosted
+    steps:
+      - uses: actions/checkout@v4
+
+      # If you need a build step (React/Vite/etc.), add it here:
+      # - run: npm ci && npm run build
+
+      # For plain HTML/CSS/JS, just upload repo root:
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    runs-on: self-hosted
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+

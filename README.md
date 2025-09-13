@@ -1,3 +1,3 @@
 Website for Bring Laika Home, LLC
 
-[Bring Laika Home](bringlaikahome.com)
+[Bring Laika Home](https://www.bringlaikahome.com)

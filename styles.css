@@ -1,0 +1,133 @@
+:root {
+  --bg: #000000;
+  --text: #ffffff;
+  --muted: #c7c7c7;
+  --nav-bg: #0b0b0b;
+  --nav-border: #1a1a1a;
+  --link: #9ad7ff;
+  --link-hover: #c8e9ff;
+}
+
+/* Page base */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Top navigation */
+nav.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  backdrop-filter: saturate(140%) blur(4px);
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+}
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  font-size: 1rem;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+}
+.nav-links a:hover,
+.nav-links a:focus {
+  color: var(--link-hover);
+  background: rgba(255,255,255,0.06);
+  outline: none;
+}
+/* Active page indicator */
+.nav-links a[aria-current="page"] {
+  color: var(--link-hover);
+  background: rgba(255,255,255,0.12);
+  font-weight: 600;
+}
+
+/* Main content centered in viewport below nav */
+main.content {
+  min-height: calc(100vh - 56px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Home page: flush hero under nav (no top gap) */
+#home.content {
+  padding-top: 0;
+  align-items: stretch;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.home-body {
+  max-width: 1100px;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+/* Home header spacing and tagline indent */
+#home h1 { margin-bottom: 1rem; }
+.home-tagline { margin: 0; margin-left: 0.75rem; }
+
+/* Common elements */
+img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+  display: block;
+}
+h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+/* Emphasized homepage tagline */
+.tagline {
+  font-size: 3rem;
+  font-weight: 800;
+}
+p {
+  color: var(--muted);
+  margin: 0.25rem 0;
+}
+
+/* Global link styles (content area) */
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: var(--link-hover);
+  text-decoration: underline;
+  outline: none;
+}

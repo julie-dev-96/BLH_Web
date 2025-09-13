@@ -84,20 +84,20 @@ main.content {
 /* Home page: flush hero under nav (no top gap) */
 #home.content {
   padding-top: 0;
-  align-items: stretch;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   justify-content: flex-start;
 }
 
 .home-body {
   max-width: 1100px;
-  margin: 0;
+  margin: 0 auto;
   padding: 0 1rem;
 }
 
 /* Home header spacing and tagline indent */
 #home h1 { margin-bottom: 1rem; }
-.home-tagline { margin: 0; margin-left: 0.75rem; }
+.home-tagline { margin: 0; margin-left: 0; }
 
 /* Common elements */
 img {

@@ -13,15 +13,16 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
       color: white;
       font-family: Arial, sans-serif;
       text-align: center;
     }
     img {
-      max-width: 100%;
-      height: auto;
+      width: 100%;   /* fills the full width */
+      height: auto;  /* keeps aspect ratio */
       margin-bottom: 2rem;
+      display: block; /* removes any inline spacing */
     }
     h1 {
       font-size: 2.5rem;

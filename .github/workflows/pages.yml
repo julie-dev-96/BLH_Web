@@ -2,7 +2,7 @@ name: Deploy static site to Pages
 
 on:
   push:
-    branches: [ main ]   # trigger when main branch is updated
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -15,14 +15,17 @@ concurrency:
 
 jobs:
   build:
-    runs-on: self-hosted   # IMPORTANT: your org requires self-hosted
+    runs-on: self-hosted   # must match your runner's labels
     steps:
       - uses: actions/checkout@v4
 
-      # If you need a build step (React/Vite/etc.), add it here:
+      # If your site has a build step, add it here (and change path below).
       # - run: npm ci && npm run build
 
-      # For plain HTML/CSS/JS, just upload repo root:
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # For plain HTML/CSS/JS sitting at repo root; change to 'dist' if you build.
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -38,4 +41,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

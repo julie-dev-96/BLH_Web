@@ -9,6 +9,7 @@
 <body>
   <nav class="site-nav" aria-label="Primary">
     <div class="nav-inner">
+      <a href="/" class="brand">Bring Laika Home</a>
       <ul class="nav-links" role="list">
         <li><a href="/" aria-current="page">Home</a></li>
         <li><a href="/products">Products</a></li>
@@ -18,11 +19,51 @@
   </nav>
 
   <main id="home" class="content">
-    <img src="banner.png" alt="Banner">
+    <picture>
+      <source srcset="banner.webp" type="image/webp">
+      <img src="banner.png" alt="Bring Laika Home banner" width="1200" height="630">
+    </picture>
     <section class="home-body">
       <h1>Mission</h1>
       <p class="home-tagline">Make kind products</p>
     </section>
   </main>
+
+  <section class="home-section home-about">
+    <div class="home-section-inner">
+      <h2>About</h2>
+      <p>The name comes from a story.</p>
+      <p>Laika was the first living creature to orbit Earth, a small dog launched into space with no way home. The world called it progress. Not everyone agreed.</p>
+      <p>I build software from the belief that progress at the cost of good is not progress at all. Everything shipped should be worth it, for the people using it.</p>
+    </div>
+  </section>
+
+  <section class="home-section home-products">
+    <div class="home-section-inner">
+      <h2>Products</h2>
+      <p>Apps built with care. <a href="/products">See what I make.</a></p>
+    </div>
+  </section>
+
+  <section class="home-section home-values">
+    <div class="home-section-inner">
+      <h2>Values</h2>
+      <p><strong>Built for the user, not the metric.</strong></p>
+      <p>Every decision starts with one question: does this make things better for the person using it? If the answer is not clearly yes, I leave it out.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 Bring Laika Home LLC</p>
+      <nav aria-label="Footer">
+        <ul class="nav-links" role="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
 </body>
 </html>
